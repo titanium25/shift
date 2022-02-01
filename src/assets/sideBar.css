@@ -1,0 +1,17 @@
+.wrapper--side--bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.item--side--bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.item--side--bar > span {
+    display: flex;
+    flex-direction: row;
+}
