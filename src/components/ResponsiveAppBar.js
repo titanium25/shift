@@ -121,8 +121,11 @@ const ResponsiveAppBar = () => {
                                     src={currentUser.providerData[0].photoURL}
                                     sx={{width: 32, height: 32}}
                                 >
-                                    {/*{getInitials(currentUser.providerData[0].displayName)}*/}
-                                    TS
+                                    {
+                                        currentUser.providerData[0].displayName &&
+                                        getInitials(currentUser.providerData[0].displayName)
+                                    }
+
                                 </Avatar>
                             </IconButton>
                         </Tooltip>

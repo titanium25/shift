@@ -34,7 +34,10 @@ const Profile = () => {
                                     src={currentUser.providerData[0].photoURL}
                                     sx={{width: 64, height: 64}}
                                 >
-                                    {getInitials(currentUser.providerData[0].displayName)}
+                                    {
+                                        currentUser.providerData[0].displayName &&
+                                        getInitials(currentUser.providerData[0].displayName)
+                                    }
                                 </Avatar>
                             </Container>
                             <br/>
