@@ -9,8 +9,15 @@ import PrivateRoute from "../config/PrivateRoute";
 import ForgotPassword from "../pages/ForgotPassword";
 import UpdateProfile from "../pages/UpdateProfile";
 import Profile from "../pages/Profile";
+import {initialize} from "../store/toolReducer";
+import Tools from "../utils/Tools";
+import {useDispatch} from "react-redux";
+
+
 
 function App() {
+    const dispatch = useDispatch();
+    dispatch(initialize(Tools))
 
     return (
         <Router>
