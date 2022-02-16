@@ -1,8 +1,5 @@
 import React from 'react';
 import '../assets/layout.css';
-import {initialize} from "../store/toolReducer";
-import Tools from "../utils/Tools";
-import {useDispatch} from "react-redux";
 import Signup from "../pages/Signup";
 import {AuthProvider} from "../context/AuthContext";
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
@@ -14,9 +11,6 @@ import UpdateProfile from "../pages/UpdateProfile";
 import Profile from "../pages/Profile";
 
 function App() {
-
-    const dispatch = useDispatch();
-    dispatch(initialize(Tools));
 
     return (
         <Router>

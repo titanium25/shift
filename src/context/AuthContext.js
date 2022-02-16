@@ -1,10 +1,10 @@
 import React, {createContext, useContext, useEffect, useState} from 'react';
-import {auth} from '../config/firebase';
-import { getAuth } from "firebase/auth";
+import firebase, {auth} from '../config/firebase';
+import {getAuth} from "firebase/auth";
+import {useDispatch} from "react-redux";
+import {initialize} from "../store/toolReducer";
 
-const auth1 = getAuth();
-const user = auth1.currentUser;
-
+const user = getAuth().currentUser;
 
 const AuthContext = createContext();
 
@@ -13,6 +13,9 @@ export const useAuth = () => {
 }
 
 export const AuthProvider = ({children}) => {
+
+    const dispatch = useDispatch();
+
 
     const [currentUser, setCurrentUser] = useState();
     const [loading, setLoading] = useState(true);
@@ -45,12 +48,24 @@ export const AuthProvider = ({children}) => {
         return auth
             .signInWithPopup(provider)
             .then((res) => {
-                console.log(res.user)
+                // console.log(res.user)
                 return res.user
             }).catch((er) => {
                 return er
             })
     };
+
+    // test
+    const createToDo = (title) => {
+        const toDoRef = firebase.database().ref('test');
+        const todo = {
+            title,
+            complete: false,
+
+        };
+        console.log(title)
+        toDoRef.push(todo);
+    }
 
 
     useEffect(() => {
@@ -63,8 +78,12 @@ export const AuthProvider = ({children}) => {
                 console.log("  Email: " + profile.email);
                 console.log("  Photo URL: " + profile.photoURL);
             });
-        }
 
+            const reference = firebase.database().ref('tools');
+            reference.on("value", (snapshot) => {
+                dispatch(initialize(snapshot.val()));
+            })
+        }
 
         return auth.onAuthStateChanged(user => {
             setCurrentUser(user);
@@ -80,7 +99,8 @@ export const AuthProvider = ({children}) => {
         resetPassword,
         updateEmail,
         updatePassword,
-        socialLogin
+        socialLogin,
+        createToDo,
     }
 
     return (

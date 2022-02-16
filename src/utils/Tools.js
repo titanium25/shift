@@ -30,7 +30,7 @@ const Tools = [
     {'slot': false},
     {'slot': false},
     {'slot': true, 'iName': 'SBH208', 'aName': '5347', 'type': 'XT-1400F', 'ip': '10.186.39.82', 'software': '4.1', 'status': 'UP'},
-    {'slot': true, 'iName': 'SBL201', 'aName': '8600', 'type': 'XT4-860M', 'ip': '10.186.39.', 'software': '5.1', 'status': 'UP'},
+    {'slot': true, 'iName': 'SBL201', 'aName': '8600', 'type': 'XT4-860M', 'ip': '10.186.39.198', 'software': '5.1', 'status': 'UP'},
 
     {'slot': false},
     {'slot': false},
@@ -47,7 +47,7 @@ const Tools = [
     {'slot': true, 'iName': 'SAU143', 'aName': 'CD47', 'type': '1980Di', 'ip': '10.186.39.144', 'software': '6.3', 'status': 'UP'},
     {'slot': true, 'iName': 'SAU144', 'aName': 'GE06', 'type': '1980Di', 'ip': '10.186.39.153', 'software': '6.3', 'status': 'UP'},
     {'slot': true, 'iName': 'SAU145', 'aName': 'KU70', 'type': '1980Di', 'ip': '10.186.39.45', 'software': '6.3', 'status': 'UP'},
-    {'slot': true, 'iName': 'SBM210', 'aName': '6678', 'type': 'XT4-1450k', 'ip': '10.186.39.', 'software': '5.1', 'status': 'UP'},
+    {'slot': true, 'iName': 'SBM210', 'aName': '6678', 'type': 'XT4-1450k', 'ip': '10.186.39.68', 'software': '5.1', 'status': 'UP'},
     {'slot': true, 'iName': 'SAU147', 'aName': 'FE07', 'type': '1980Di', 'ip': '10.186.39.148', 'software': '6.3', 'status': 'UP'},
 
     {'slot': true, 'iName': 'SAU121', 'aName': 'EU04', 'type': '1980Di', 'ip': '10.186.39.170', 'software': '6.2', 'status': 'UP'},

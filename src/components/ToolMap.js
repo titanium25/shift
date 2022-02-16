@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {styled} from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import {Button} from "@mui/material";
 import '../assets/toolMap.css';
 import {useDispatch, useSelector} from "react-redux";
 import {viewTool} from '../store/toolReducer';
+import {useAuth} from "../context/AuthContext";
 
 const CleanRoom = styled(Paper)(({theme}) => ({
     backgroundColor: '#CDDEFF',
@@ -24,15 +25,10 @@ const ToolMap = () => {
     const dispatch = useDispatch();
     const tools = useSelector(state => state.entities.tools.fleet);
     const active = useSelector(state => state.entities.tools.tool);
-
-    const handleClick = (tool) => {
-        if(active.aName === tool.aName){
-            dispatch(viewTool({}))
-        } else {
-            dispatch(viewTool(tool))
-        }
-    }
-
+    const handleClick = (tool) =>
+        active.aName === tool.aName
+            ? dispatch(viewTool({}))
+            : dispatch(viewTool(tool));
     return (
         <div>
             <CleanRoom>

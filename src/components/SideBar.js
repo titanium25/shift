@@ -12,12 +12,15 @@ import DialogContentText from "@mui/material/DialogContentText";
 import TextField from "@mui/material/TextField";
 import DialogActions from "@mui/material/DialogActions";
 import Dialog from "@mui/material/Dialog";
+import {useAuth} from "../context/AuthContext";
 
 const PaperStyledComponent = styled(Paper)(({theme}) => ({
     backgroundColor: '#CDDEFF',
 }));
 
 const SideBar = () => {
+
+    const {createToDo} = useAuth();
 
     const dispatch = useDispatch();
     const tool = useSelector(state => state.entities.tools.tool);
@@ -43,6 +46,7 @@ const SideBar = () => {
         setOpenActivity(true);
         dispatch(setStatus(status))
     };
+
 
     return (
         <div>
@@ -154,6 +158,11 @@ const SideBar = () => {
                                     SCH
                                 </Button>
                             </div>
+
+
+                            <button onClick={() => createToDo("alex")}>Add</button>
+
+
                         </div>
                     </PaperStyledComponent>
                 </div>
