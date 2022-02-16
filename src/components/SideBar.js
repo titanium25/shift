@@ -160,7 +160,7 @@ const SideBar = () => {
                             </div>
 
 
-                            <button onClick={() => createToDo("alex")}>Add</button>
+                            {/*<button onClick={() => createToDo("alex")}>Add</button>*/}
 
 
                         </div>
