@@ -81,6 +81,7 @@ export const AuthProvider = ({children}) => {
 
             const reference = firebase.database().ref('tools');
             reference.on("value", (snapshot) => {
+                console.log(snapshot.val())
                 dispatch(initialize(snapshot.val()));
             })
         }
