@@ -1,11 +1,10 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {styled} from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import {Button} from "@mui/material";
 import '../assets/toolMap.css';
 import {useDispatch, useSelector} from "react-redux";
 import {viewTool} from '../store/toolReducer';
-import {useAuth} from "../context/AuthContext";
 
 const CleanRoom = styled(Paper)(({theme}) => ({
     backgroundColor: '#CDDEFF',
@@ -62,7 +61,7 @@ const ToolMap = () => {
                                                                 : "rgba(0,128,255,0.58)",
                                                     color: tool.status === "UP" || tool.status === "SD" ? "#000" : "#FFF",
                                                     padding: "14px 18px",
-                                                    fontWeight:  'bold',
+                                                    fontWeight: 'bold',
                                                     fontSize: "15px",
                                                     border: tool.aName === active.aName ? '2px solid #000' : '1px solid #000',
                                                     borderColor: "rgba(0,0,0,0.93)",

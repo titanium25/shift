@@ -1,0 +1,18 @@
+.login--container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-column-gap: 0px;
+    place-self: center;
+    background-color: #ffffff;
+}
+
+.login--logo {
+    background-color: #0f238c;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 100px;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+}
