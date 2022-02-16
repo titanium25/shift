@@ -80,11 +80,11 @@ export const AuthProvider = ({children}) => {
                 console.log("  Photo URL: " + profile.photoURL);
             });
 
-            const reference = firebase.database().ref('tools');
-            reference.on("value", (snapshot) => {
-                console.log(snapshot.val())
-                dispatch(initialize(Tools))
-            })
+            // const reference = firebase.database().ref('tools');
+            // reference.on("value", (snapshot) => {
+            //     console.log(snapshot.val())
+            //     dispatch(initialize(Tools))
+            // })
         }
 
         return auth.onAuthStateChanged(user => {
