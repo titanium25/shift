@@ -3,6 +3,7 @@ import firebase, {auth} from '../config/firebase';
 import {getAuth} from "firebase/auth";
 import {useDispatch} from "react-redux";
 import {initialize} from "../store/toolReducer";
+import Tools from "../utils/Tools";
 
 const user = getAuth().currentUser;
 
@@ -82,7 +83,7 @@ export const AuthProvider = ({children}) => {
             const reference = firebase.database().ref('tools');
             reference.on("value", (snapshot) => {
                 console.log(snapshot.val())
-                dispatch(initialize(snapshot.val()));
+                dispatch(initialize(Tools))
             })
         }
 
