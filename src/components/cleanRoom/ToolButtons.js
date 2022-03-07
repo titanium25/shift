@@ -15,17 +15,15 @@ const ToolButtons = () => {
         <div>
             <PaperStyledComponent>
                 <div className="wrapper--side--bar">
-
-                        {
-                            status.map((t, i) => {
-                                return (
-                                    <div key={i} className="item--side--bar">
+                    {
+                        status.map((t, i) => {
+                            return (
+                                <div key={i} className="item--side--bar">
                                     <StatusButton key={i} status={t}/>
-                                    </div>
-                                )
-                            })
-                        }
-
+                                </div>
+                            )
+                        })
+                    }
                 </div>
             </PaperStyledComponent>
         </div>
