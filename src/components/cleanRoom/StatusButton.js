@@ -71,6 +71,9 @@ const StatusButton = (props) => {
                     />
                     <TextField
                         autoFocus
+                        multiline
+                        maxRows={4}
+                        rows={4}
                         margin="dense"
                         id="activity"
                         label="Activity"
