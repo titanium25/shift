@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import '../assets/layout.css';
 import Signup from "../pages/Signup";
 import {AuthProvider} from "../context/AuthContext";
@@ -17,7 +17,11 @@ import {useDispatch} from "react-redux";
 
 function App() {
     const dispatch = useDispatch();
-    dispatch(initialize(Tools))
+
+    useEffect(() => {
+        dispatch(initialize(Tools))
+        console.log('Initializing...')
+    },[])
 
     return (
         <Router>

@@ -2,13 +2,17 @@ import React from 'react';
 import {styled} from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import {Button} from "@mui/material";
-import '../assets/toolMap.css';
+import '../../assets/toolMap.css';
 import {useDispatch, useSelector} from "react-redux";
-import {viewTool} from '../store/toolReducer';
+import {viewTool} from '../../store/toolReducer';
+import firebase from "../../config/firebase";
+import {initialize} from "../../store/toolReducer";
+import Tools from "../../utils/Tools";
+
+
 
 const CleanRoom = styled(Paper)(({theme}) => ({
     backgroundColor: '#CDDEFF',
-
 }));
 
 const ReticleRoom = styled(Paper)(({theme}) => ({
@@ -22,18 +26,31 @@ const ReticleRoom = styled(Paper)(({theme}) => ({
 
 const ToolMap = () => {
     const dispatch = useDispatch();
-    const tools = useSelector(state => state.entities.tools.fleet);
+    const fleet = useSelector(state => state.entities.tools.fleet);
     const active = useSelector(state => state.entities.tools.tool);
+
+    // const reference = firebase.database().ref('tools');
+    // let fleet = []
+    //
+    // reference.on("value", (snapshot) => {
+    //     console.log(snapshot.val())
+        // fleet = snapshot.val()
+        // dispatch(initialize(snapshot.val()))
+    // })
+
+    // dispatch(initialize(fleet))
+
     const handleClick = (tool) =>
         active.aName === tool.aName
             ? dispatch(viewTool({}))
             : dispatch(viewTool(tool));
+
     return (
         <div>
             <CleanRoom>
                 <div className="wrapper--tool--map">
                     {
-                        tools.map((tool, index) => {
+                        fleet.map((tool, index) => {
                             return (
                                 <div className="tool--slot" key={index}>
                                     {
@@ -79,7 +96,6 @@ const ToolMap = () => {
                         })
                     }
                     <div className="reticle--room">
-
                         <ReticleRoom elevation={6}>
                             <p>Reticle Room</p>
                         </ReticleRoom>

@@ -1,7 +1,7 @@
 import React from 'react';
-import ToolMap from "./ToolMap";
-import SideBar from "./SideBar";
-import ResponsiveAppBar from "./ResponsiveAppBar";
+import ToolMap from "../components/cleanRoom/ToolMap";
+import SideBar from "../components/cleanRoom/SideBar";
+import ResponsiveAppBar from "../components/ResponsiveAppBar";
 
 const CleanRoom = () => {
 

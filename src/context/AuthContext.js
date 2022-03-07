@@ -2,8 +2,6 @@ import React, {createContext, useContext, useEffect, useState} from 'react';
 import firebase, {auth} from '../config/firebase';
 import {getAuth} from "firebase/auth";
 import {useDispatch} from "react-redux";
-import {initialize} from "../store/toolReducer";
-import Tools from "../utils/Tools";
 
 const user = getAuth().currentUser;
 
@@ -80,11 +78,7 @@ export const AuthProvider = ({children}) => {
                 console.log("  Photo URL: " + profile.photoURL);
             });
 
-            // const reference = firebase.database().ref('tools');
-            // reference.on("value", (snapshot) => {
-            //     console.log(snapshot.val())
-            //     dispatch(initialize(Tools))
-            // })
+
         }
 
         return auth.onAuthStateChanged(user => {

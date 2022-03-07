@@ -16,7 +16,10 @@ const slice = createSlice({
         setStatus: (state, action) => {
             state.fleet
                 .find(t => t.iName === state.tool.iName)
-                .status = action.payload
+                .status = action.payload;
+
+            state.tool.status = action.payload;
+
         },
     },
 });

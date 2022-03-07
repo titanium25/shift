@@ -1,5 +1,5 @@
 import React from 'react';
-import CleanRoom from "../components/CleanRoom";
+import CleanRoom from "./CleanRoom";
 
 const Dashboard = () => {
 
